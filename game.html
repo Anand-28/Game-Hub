@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <h1><b>Stone Paper Scissor Game</b></h1>
+    <div class="divide">
+        <div class="left">
+            <div class="btn">
+                <button onclick="play('Paper')">Paper</button>
+                <button onclick="play('Scissor')">Scissor</button>
+                <button onclick="play('Stone')">Stone</button>
+            </div>
+            <p id="lr"></p>
+        </div>
+
+        <div>
+            <h1>Score Card</h1>
+            <table id="myTable">
+                <tr>
+                    <td>Round No.</td>
+                    <td>You</td>
+                    <td>Computer</td>
+                </tr>
+                
+            </table>
+        </div>
+
+        <div class="right">  
+            <div class="btn">
+                <button >Paper</button>
+                <button >Scissor</button>
+                <button >Stone</button>
+            </div>
+            <p id="rr"></p>
+        </div>
+    </div>
+
+    <h1 id="res"></h1>
+
+    <script>
+    var playerScore=0;
+    var compScore=0;
+    var roundResults=[];
+
+    function play(userChoice){
+        const choice=["Stone","Paper","Scissor"];
+        const comp_choice=choice[Math.floor(Math.random()*3)];
+
+        var table=document.getElementById('myTable');
+        let result;
+        
+        var newRow=table.insertRow();
+            var round=newRow.insertCell();
+            var you=newRow.insertCell();
+            var comp=newRow.insertCell();
+
+        round.innerHTML= table.rows.length-1;
+
+           if(row.length=6){
+            alert("Game Over!");
+           }
+           else{
+
+           /* if(playerScore === compScore){
+                result="It's a tie!";
+            }
+            else if(playerScore>compScore){
+                result="You Win!!";
+            }
+            else{
+                result="Computer Wins";
+            }
+            */
+            
+        
+            if(userChoice==comp_choice){
+                result="Tie!";
+                }
+
+            else if( (userChoice === "Stone" && comp_choice === "Scissor") || 
+                     (userChoice === "Paper" && comp_choice === "Stone") || 
+                     (userChoice === "Scissor" && comp_choice === "Paper")
+                     ){
+                result="You Win!!";          
+            }
+            else{
+                result="Computer Wins";
+            }
+
+            
+            you.textContent = (result === "You Win!!") ? '1' : '0';
+            comp.textContent = (result === "Computer Wins!!") ? '1' : '0';
+        
+        document.getElementById('lr').innerHTML= `Your Choice: ${userChoice}`;
+        document.getElementById('rr').innerHTML=`Computer Choice: ${comp_choice}`;
+        document.getElementById('res').innerHTML=`<strong> ${result} </strong>`;
+           }
+    }
+    </script>
+</body>
+</html>
