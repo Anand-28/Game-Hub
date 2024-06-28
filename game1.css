@@ -1,0 +1,54 @@
+body{
+    background-color:rgb(7, 245, 245);
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+}
+
+.header{
+    font-size: 40px;
+}
+
+
+
+.card{ 
+    padding : 10px;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+    background-color:rgb(240, 246, 244);
+    margin: auto;
+    box-shadow: 10px slategrey;
+    font-size: 25px;
+}  
+
+input{
+    margin : 10px 5px ;
+    padding:1px;
+    font-size: 20px;
+}
+.card > button{
+     width:100px;
+     height:70px;
+     align-self: center;
+     height: 40px;
+     border-radius: 10px;
+     background-color: blueviolet;
+     color: aliceblue;
+     border-color: black;
+     cursor: pointer;
+     font-size:25px;
+}
+
+.card > button:hover{
+    border-color:blueviolet;
+    background-color: aliceblue;
+    color:black;
+}
+
+#num{
+    width: 80%;
+    align-self: center;
+}
